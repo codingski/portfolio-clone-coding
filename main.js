@@ -54,3 +54,24 @@ document.addEventListener('scroll', () => {
 document.addEventListener('scroll', () => {
     fadeSection('#about', 2);
 })
+
+const navBar = document.querySelector('.navbar__menu');
+
+navBar.addEventListener('click', (event) => {
+    console.log(event.target);
+})
+
+
+const arrow = document.querySelector('.arrow-up');
+arrow.addEventListener('click', ()=> {
+    const home = document.querySelector('#home');
+    home.scrollIntoView({behavior: "smooth"});
+})
+
+document.addEventListener('scroll', () => {
+    if(window.scrollY > 100) {
+        arrow.classList.add('visible');
+    } else {
+        arrow.classList.remove('visible');
+    }
+})
