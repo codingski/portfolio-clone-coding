@@ -35,10 +35,22 @@ function scrollIntoView(selector) {
     scrollTo.scrollIntoView({behavior: "smooth"});
 }
 
+
+// fade Function
+function fadeSection (sectionId, sectionNum) {
+    const section = document.querySelector(sectionId); 
+    const height = section.getBoundingClientRect().height;
+    section.style.opacity = sectionNum - window.scrollY / height;
+}
+
 // Make home slowly fade to transparent as the window scrolls down
 
-const home = document.querySelector('.home__container');
 document.addEventListener('scroll', () => {
-    const homeHeight = home.getBoundingClientRect().height;
-        home.style.opacity = 1 - window.scrollY / homeHeight;
+    fadeSection('.home__container', 1);
+})
+
+// Make 'about' slowly fade to transparent as the window scrolls down
+
+document.addEventListener('scroll', () => {
+    fadeSection('#about', 2);
 })
