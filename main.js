@@ -9,12 +9,28 @@ document.addEventListener('scroll', ()=> {
     } else {
         navbar.classList.remove('navbar--dark');
     }
-
-    console.log(window.scrollY);
 })
 
-const about = document.getElementById('#about__');
 
-about.addEventListener('click', () => {
-    about.scrollIntoView(false, {block: "end", inline: "nearest"});
+// Handle scrolling when tapping on the navbar menu
+const navbarMenu = document.querySelector('.navbar__menu');
+navbarMenu.addEventListener('click', (event) => {
+    const target = event.target;
+    const link = target.dataset.link;
+    if(link == null) {
+        return;
+    }
+    scrollIntoView(link);
 })
+
+
+// Handle scrolling when tapping on the 'CONTACT ME' button
+const homeContactBtn = document.querySelector('.home__contact');
+homeContactBtn.addEventListener('click', () => {
+    scrollIntoView('#contact');
+})
+
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: "smooth"});
+}
