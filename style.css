@@ -120,7 +120,7 @@ button {
     margin-right: 6px;
 }
 
-#navbar .navbar__menu {
+.navbar__menu {
     display: flex;
     justify-content: space-between;
 }
@@ -393,18 +393,18 @@ button {
 }
 
 .project__description h3 {
-    color: var(--color-white);
+    color: var(--color-orange);
 }
 
 .project__description h3::after {
     content: '';
-    width: 25px;
+    width: 50px;
     height: 2px;
     background-color: var(--color-dark-white);
     display: block;
     position: relative;
     left: 50%;
-    margin-left: -12px;
+    transform: translateX(-50%);
     margin-top: 8px;
 }
 
@@ -492,12 +492,13 @@ button {
 @media screen and (max-width: 768px) {
     .navbar__toggle-btn {
         display: block;
-        top: 12px;
+        top: 8px;
     }
 
     #navbar {
         flex-direction: column;
         align-items: flex-start;
+        background-color: var(--color-pink);
     }
 
     .navbar__menu {
@@ -526,6 +527,10 @@ button {
     .testimonial__avatar {
         width: 80px;
         height: 80px;
+    }
+
+    .open {
+        display: block;
     }
 }
 

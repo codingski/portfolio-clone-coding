@@ -9,6 +9,8 @@ document.addEventListener('scroll', ()=> {
     } else {
         navbar.classList.remove('navbar--dark');
     }
+
+    navbarMenu.classList.remove('open');
 })
 
 
@@ -31,6 +33,12 @@ navbarMenu.addEventListener('click', (event) => {
     })
 })
 
+// Navbar menu button for small screen
+
+const toggleBtn = document.querySelector('.navbar__toggle-btn');
+toggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
+})
 
 // Handle scrolling when tapping on the 'CONTACT ME' button
 const homeContactBtn = document.querySelector('.home__contact');
@@ -113,3 +121,4 @@ workBtnContainer.addEventListener('click', (event) => {
         }
     });
 });
+
