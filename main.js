@@ -14,6 +14,7 @@ document.addEventListener('scroll', ()=> {
 
 // Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar__menu');
+const navbarMenuItems = document.querySelectorAll('.navbar__menu__item');
 navbarMenu.addEventListener('click', (event) => {
     const target = event.target;
     const link = target.dataset.link;
@@ -21,6 +22,13 @@ navbarMenu.addEventListener('click', (event) => {
         return;
     }
     scrollIntoView(link);
+    navbarMenuItems.forEach((item) => {
+        if(item.dataset.link == event.target.dataset.link) {
+            event.target.classList.add('active');
+        } else {
+            event.target.classList.remove('active');
+        }
+    })
 })
 
 
@@ -89,3 +97,19 @@ workBtnContainer.addEventListener('click', (event) => {
         projectsContainer.classList.remove('anim-out');
     }, 300);
 })
+
+
+// Button
+const categoryBtn = document.querySelectorAll('.category__btn');
+workBtnContainer.addEventListener('click', (event) => {
+    const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter;
+    categoryBtn.forEach((category)=> {
+        console.log(category);
+        console.log(category.dataset.filter);
+        if(filter == category.dataset.filter) {
+            category.classList.add('active');
+        } else{
+            category.classList.remove('active');
+        }
+    });
+});

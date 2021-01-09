@@ -492,6 +492,7 @@ button {
 @media screen and (max-width: 768px) {
     .navbar__toggle-btn {
         display: block;
+        top: 12px;
     }
 
     #navbar {
