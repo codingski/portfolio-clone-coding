@@ -65,12 +65,6 @@ document.addEventListener('scroll', () => {
     fadeSection('.home__container', 1);
 })
 
-// Make 'about' slowly fade to transparent as the window scrolls down
-
-document.addEventListener('scroll', () => {
-    fadeSection('#about', 2);
-})
-
 
 // Make Arrow-Up Button
 const arrow = document.querySelector('.arrow-up');

@@ -492,6 +492,18 @@ button {
 }
 
 @media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    :root {
+        /* Font size */
+        --font-large: 30px;
+        --font-medium: 18px;
+        --font-regular: 16px;
+        --font-small: 14px;
+        --font-micro: 12px;
+    }
+    
     .navbar__toggle-btn {
         display: block;
         top: 8px;
@@ -501,6 +513,7 @@ button {
         flex-direction: column;
         align-items: flex-start;
         background-color: var(--color-pink);
+        padding: 4px 16px;
     }
 
     .navbar__menu {
@@ -508,6 +521,10 @@ button {
         text-align: center;
         width: 100%;
         display: none;
+    }
+
+    .section {
+        padding: 16px;
     }
 
     .about__majors {
