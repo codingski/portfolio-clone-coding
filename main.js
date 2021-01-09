@@ -55,23 +55,37 @@ document.addEventListener('scroll', () => {
     fadeSection('#about', 2);
 })
 
-const navBar = document.querySelector('.navbar__menu');
 
-navBar.addEventListener('click', (event) => {
-    console.log(event.target);
-})
-
-
+// Make Arrow-Up Button
 const arrow = document.querySelector('.arrow-up');
 arrow.addEventListener('click', ()=> {
     const home = document.querySelector('#home');
     home.scrollIntoView({behavior: "smooth"});
 })
-
 document.addEventListener('scroll', () => {
     if(window.scrollY > 100) {
         arrow.classList.add('visible');
     } else {
         arrow.classList.remove('visible');
     }
+})
+
+
+// Projects
+const workBtnContainer = document.querySelector('.work__categories');
+const projectsContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (event) => {
+    const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter;
+    projectsContainer.classList.add('anim-out');
+    setTimeout(()=> {
+        projects.forEach((project) => {
+            if(filter == '*' || filter == project.dataset.type) {
+                project.classList.remove('invisible');
+            } else {
+                project.classList.add('invisible');
+            }
+        })
+        projectsContainer.classList.remove('anim-out');
+    }, 300);
 })
