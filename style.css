@@ -146,7 +146,8 @@ button {
 /* Home */
 #home {
     background: url("./imgs/homebackground.png") center/cover no-repeat;
-    padding: 120px;
+    padding-top: 120px;
+    padding: 40px;
     text-align: center;
 }
 
@@ -173,7 +174,6 @@ button {
     border-radius: 4px;
 }
 
-
 /* Section common */
 .section {
     padding: 50px;
@@ -186,7 +186,7 @@ button {
     margin: auto;
 }
 /* About */
-#about .about__majors {
+.about__majors {
     display: flex;
     justify-content: space-between;
     margin: 80px 0;
@@ -491,10 +491,28 @@ button {
     display: none; /* opacity를 이용하면 안보이지만 클릭은 됨, 그래서 display를 이용하는게 좋음*/
 }
 
+/* ArrouwUp Button */
+.arrow-up {
+    position: fixed;
+    font-size: 50px;
+    background-color: var(--color-pink);
+    color: var(--color-white);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    right: 50px;
+    bottom: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--animation-duration) ease;
+}
+
+.arrow-up.visible {
+    pointer-events: auto;
+    opacity: 1;
+}
+
 @media screen and (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-    }
     :root {
         /* Font size */
         --font-large: 30px;
@@ -506,7 +524,7 @@ button {
     
     .navbar__toggle-btn {
         display: block;
-        top: 8px;
+        top: 2px;
     }
 
     #navbar {
@@ -529,13 +547,23 @@ button {
 
     .about__majors {
         flex-direction: column;
+        margin-top: 30px;
+        margin-bottom: 0px;
     }
 
     .major {
-        margin-bottom: 38px;
+        margin-bottom: 30px;
     }
 
     .skillset {
+        flex-direction: column;
+    }
+
+    .category__btn {
+        padding: 8px;
+    }
+    .work__categories {
+        display: flex;
         flex-direction: column;
     }
 
@@ -551,25 +579,34 @@ button {
     .open {
         display: block;
     }
+
+    .testimonial {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial__speach-bubble {
+        order: 1;
+    }
+
+    .testimonial__avatar:nth-child(even),
+    .testimonial__avatar:nth-child(odd) {
+        margin: 0;
+        margin-bottom: 8px;
+    }
+
+    .testimonial__avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .arrow-up {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        line-height: 50px;
+        right: 16px;
+        bottom: 16px;
+    }
 }
 
-/* ArrouwUp Button */
-.arrow-up {
-    position: fixed;
-    font-size: 50px;
-    background-color: var(--color-pink);
-    color: var(--color-white);
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    right: 50px;
-    bottom: 50px;
-    opacity: 0;
-    pointer-events: none;
-    transition: all var(--animation-duration) ease;
-}
-
-.arrow-up.visible {
-    pointer-events: auto;
-    opacity: 1;
-}
