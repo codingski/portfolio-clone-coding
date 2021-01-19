@@ -174,6 +174,7 @@ button {
     border-radius: 4px;
 }
 
+
 /* Section common */
 .section {
     padding: 50px;
@@ -398,7 +399,7 @@ button {
     color: var(--color-orange);
 }
 
-.project__description h3::after {
+    .project__description h3::after {
     content: '';
     width: 50px;
     height: 2px;
@@ -408,7 +409,7 @@ button {
     left: 50%;
     transform: translateX(-50%);
     margin-top: 8px;
-}
+    }
 
 /* Contact */
 #contact {
